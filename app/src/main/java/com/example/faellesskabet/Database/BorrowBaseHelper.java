@@ -15,13 +15,20 @@ public class BorrowBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + BorrowDbSchema.ItemTable.NAME + "(" +
-                BorrowDbSchema.ItemTable.Cols.NAME + ", " +
-                BorrowDbSchema.ItemTable.Cols.ROOMNUMBER + "," +
-                BorrowDbSchema.ItemTable.Cols.PHONENUMBER + "," +
-                BorrowDbSchema.ItemTable.Cols.DATE +"," +
-                BorrowDbSchema.ItemTable.Cols.DEPOSIT + ")"
+        db.execSQL("create table " + BorrowDbSchema.BorrowTable.NAME + "(" +
+                //BorrowDbSchema.BorrowTable.Cols.ID + ", " +
+                BorrowDbSchema.BorrowTable.Cols.NAME + ", " +
+                BorrowDbSchema.BorrowTable.Cols.ROOMNUMBER + "," +
+                BorrowDbSchema.BorrowTable.Cols.PHONENUMBER + "," +
+                //BorrowDbSchema.BorrowTable.Cols.DATE +"," +
+                BorrowDbSchema.BorrowTable.Cols.DEPOSIT + ")"
         );
+
+        db.execSQL("create table " + BorrowDbSchema.Itemtable.NAME + "(" +
+                //BorrowDbSchema.Itemtable.Cols.ID + ", " +
+                BorrowDbSchema.Itemtable.Cols.WHAT + ", " +
+                BorrowDbSchema.Itemtable.Cols.COLOUR + ")"
+                );
     }
 
     @Override

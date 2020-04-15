@@ -2,9 +2,11 @@ package com.example.faellesskabet;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class Borrow {
 
+    private UUID mID;
     private String mName;
     private int mRoomNo;
     private int mPhoneNo;
@@ -18,7 +20,11 @@ public class Borrow {
         mPhoneNo = phoneNo;
         mDate = new Date();
         mDeposit = deposit;
+        mID = UUID.randomUUID();
+        //mItems = list;
     }
+
+    public UUID getID() { return mID; };
 
     public String getName() {
         return mName;
